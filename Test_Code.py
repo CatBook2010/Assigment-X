@@ -17,3 +17,24 @@ __.assertEqual(
 )
 
 print("\n\033[37;42;2m  Success! Your code works as intended.  \033[0m\n")
+
+# Test Cell. Do not modify
+from unittest import TestCase
+__ = TestCase()
+
+# The youngest one is Vision:
+__.assertEqual(str(youngest), "Vision (6)")
+
+# The oldest is Bucky Barnes
+__.assertEqual(str(oldest), "Bucky Barnes (104)")
+
+print("\n\033[37;42;2m  Success! Your code works as intended.  \033[0m\n")
+
+# Test code, don't modify
+from unittest import TestCase
+__ = TestCase()
+
+__.assertEqual(set(map(str, gen_x)), {'Tony Stark (45)', 'Rhodey Rhodes (53)', 'Bruce Banner (52)'})
+
+print("\n\033[37;42;2m  Success! Your code works as intended.  \033[0m\n")
+
