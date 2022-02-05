@@ -38,3 +38,15 @@ class Person:
             >>> "Guido van Rossum (65)"
         """
         return f"{self.name} ({self.compute_age()})"
+
+persons = ['Bucky Barnes, born 1917',
+           'Steve Rogers, born 1918',
+           'Tony Stark, born 1976',
+           'Bruce Banner, born 1969',
+           'Rhodey Rhodes, born 1968',
+           'Wanda Maximoff, born 1989',
+           'Vision, born 2015',
+           'Peter Parker, born 2001',
+           'Peter Quill, born 1980',
+           'Monica Rambeau, born 1984',
+           'Carol Danvers, born 1964']
