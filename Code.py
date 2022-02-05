@@ -37,7 +37,7 @@ for person in persons:
 youngest = age_persons[min(age_persons.keys())]
 oldest = age_persons[max(age_persons.keys())]
 
-# def get_young_old(persons: list):
+# def get_young_old(persons: list) -> tuple:
 #     youngest = persons[0]
 #     youngest_age = youngest.compute_age()
 #     oldest = persons[0]
@@ -82,3 +82,16 @@ oldest = age_persons[max(age_persons.keys())]
 
 # (It is enough if it looks roughly the same. As an advanced challege, try to make it look exactly the same: The name must be left-aligned, year of birth and age right-aligned.)
 
+def print_persons(persons:list) -> None:
+    print('Name             Year of Birth Age')    
+    print('----------------------------------')
+    # for person in persons:
+    #     long_space = " " * (24 - len(person.name))
+    #     short_space = " " * (4 - len(str(person.compute_age())))
+    #     print(f"{person.name}{long_space}{person.year_of_birth}{short_space}{person.compute_age()}")
+    #     # print(str(person.name) + ' ' * (24  - len(person.name)) + str(person.year_of_birth) + ' ' * (4 - len(str(person.compute_age()))) + str(person.compute_age()))
+
+    for person in persons:
+        print(f"{person.name:<15} {person.year_of_birth:>12} {person.compute_age():>5}")
+
+print_persons(persons)
