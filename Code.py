@@ -1,4 +1,5 @@
 from Person import Person
+from Superhero import Superhero
 
 # We define following class `Person`.
 
