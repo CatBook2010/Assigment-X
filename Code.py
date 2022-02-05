@@ -85,13 +85,32 @@ oldest = age_persons[max(age_persons.keys())]
 def print_persons(persons:list) -> None:
     print('Name             Year of Birth Age')    
     print('----------------------------------')
-    # for person in persons:
-    #     long_space = " " * (24 - len(person.name))
-    #     short_space = " " * (4 - len(str(person.compute_age())))
-    #     print(f"{person.name}{long_space}{person.year_of_birth}{short_space}{person.compute_age()}")
-    #     # print(str(person.name) + ' ' * (24  - len(person.name)) + str(person.year_of_birth) + ' ' * (4 - len(str(person.compute_age()))) + str(person.compute_age()))
-
     for person in persons:
-        print(f"{person.name:<15} {person.year_of_birth:>12} {person.compute_age():>5}")
+        long_space = " " * (26 - len(person.name))
+        short_space = " " * (4 - len(str(person.compute_age())))
+        print(f"{person.name}{long_space}{person.year_of_birth}{short_space}{person.compute_age()}")
+        # print(str(person.name) + ' ' * (24  - len(person.name)) + str(person.year_of_birth) + ' ' * (4 - len(str(person.compute_age()))) + str(person.compute_age()))
+
+    # for person in persons:
+    #     print(f"{person.name:<15} {person.year_of_birth:>12} {person.compute_age():>5}")
 
 print_persons(persons)
+
+
+# Task 1.4: Filter
+# Use a `filter` function call to extract exactly these `Person`(s) out of the `persons` list that are said to be in *Generation X* (born between 1965 and 1979 (inclusive))
+
+# - Store the result in a `list` called `gen_x`.
+
+# Afterwards, try to `print` the resulting list? What happens here and why doesn't it work?
+
+def is_gen_X(person):
+    if 1965 <= person.year_of_birth <= 1979:
+        return True
+    return False
+
+gen_X_people = list(filter(is_gen_X, persons))
+print(", ".join(map(str, gen_X_people)))
+
+
+
