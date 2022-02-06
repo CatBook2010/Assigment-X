@@ -1,5 +1,6 @@
 from Person import Person
 from Superhero import Superhero
+from HealingSuperhero import HealingSuperhero
 
 # We define following class `Person`.
 
@@ -113,5 +114,45 @@ def is_gen_X(person):
 gen_X_people = list(filter(is_gen_X, persons))
 print(", ".join(map(str, gen_X_people)))
 
+bucky     = Superhero("Bucky Barnes",   1917, 'Winter Soldier',   50)
+steve     = Superhero("Steve Rogers",   1918, 'Captain America', 250)
+tony      = Superhero("Tony Stark",     1976, 'Iron-Man',        150)
+hulk      = Superhero("Bruce Banner",   1969, 'Hulk',            600)
+rhodey    = Superhero("Rhodey Rhodes",  1968, 'War Machine',     100)
+wanda     = Superhero("Wanda Maximoff", 1989, 'Scarlett Witch',  900)
+vision    = Superhero("Vision",         2015, 'Vision',          850)
+spiderman = Superhero("Peter Parker",   2001, 'Spider-Man',      180)
+starlord  = Superhero("Peter Quill",    1980, 'Starlord',         10)
+photon    = Superhero("Monica Rambeau", 1984, 'Photon',          800)
+carol     = Superhero("Carol Danvers",  1964, 'Captain Marvel', 1000)
 
+# For later, we'll add them to a list:
+superheroes = [bucky, steve, tony, hulk, rhodey, wanda, vision, spiderman, starlord, photon, carol]
 
+order = [
+    (steve, bucky),
+    (tony, steve),
+    (wanda, vision),
+    (vision, rhodey),
+    (spiderman, starlord),
+    (tony, starlord),
+    (hulk, tony),
+    (carol, vision),
+    (wanda, photon),
+    (photon, hulk)
+]
+
+for couple in order:
+    couple = list(couple)
+    couple[0].fight(couple[1])
+
+danny = HealingSuperhero('Danny Rand', 1991, 'Iron Fist', 250)
+
+for superhero in superheroes:
+    danny.heal(superhero)
+
+print('Name             Year of Birth Age Allias        Powerlevel')    
+print('-----------------------------------------------------------')
+
+for person in superheroes:
+    print(f"{person.name:<15} {person.year_of_birth:>12} {person.compute_age():>5} {person.allias:<20}{person.powerlevel:>4}")      
