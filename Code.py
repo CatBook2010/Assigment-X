@@ -142,14 +142,24 @@ order = [
     (photon, hulk)
 ]
 
-for couple in order:
-    couple = list(couple)
-    couple[0].fight(couple[1])
+# for couple in order:
+#     couple = list(couple)
+#     couple[0].fight(couple[1])
+print()
+
+for hero1, hero2 in order:
+    hero1.fight(hero2)
+    print(f"Fight between {hero1.allias} and {hero2.allias}: \n\t\t{hero1}\n\t\t{hero2}")
+    print()
 
 danny = HealingSuperhero('Danny Rand', 1991, 'Iron Fist', 250)
 
+superheroes.append(danny)
+
 for superhero in superheroes:
-    danny.heal(superhero)
+    # if superhero.powerlevel == 0:
+    if not isinstance(superhero, HealingSuperhero):
+        danny.heal(superhero)
 
 print('Name             Year of Birth Age Allias        Powerlevel')    
 print('-----------------------------------------------------------')

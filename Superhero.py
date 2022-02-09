@@ -24,19 +24,23 @@ class Superhero(Person):
         else:
             self_pl = self.powerlevel
             enemy_pl = enemy.powerlevel
-            self.powerlevel == self_pl - (enemy_pl // 2)
+            
+            self.powerlevel = self_pl - (enemy_pl // 2)
+            enemy.powerlevel = enemy_pl - (self_pl // 2)
+            
             if self.powerlevel < 0:
                 self.powerlevel = 0
-            enemy.powerlevel == enemy_pl - (self_pl // 2)
-            if enemy.powerlevel < 0:
+            
+            elif enemy.powerlevel < 0:
                 enemy.powerlevel = 0
-        print(f'Fight between {self.allias} and {enemy.allias}:')
-        if self.powerlevel > enemy.powerlevel:
-            print(f'     {self.allias}: {self.powerlevel}')
-            print(f'     {enemy.allias}: DEFEATED')
-        elif enemy.powerlevel > self.powerlevel:
-            print(f'     {self.allias}: DEFEATED')
-            print(f'     {enemy.allias}: {self.powerlevel}')
+        
+        # print(f'Fight between {self.allias} and {enemy.allias}:')
+        # if self.powerlevel > enemy.powerlevel:
+        #     print(f'     {self.allias}: {self.powerlevel}')
+        #     print(f'     {enemy.allias}: DEFEATED')
+        # elif enemy.powerlevel > self.powerlevel:
+        #     print(f'     {self.allias}: DEFEATED')
+        #     print(f'     {enemy.allias}: {self.powerlevel}')
 
 ## Task 2.3: The `.fight()` instance method
 # A superhero in addtion has the ability to fight another superhero: this is modelled by the instance method `fight(self, enemy)`. The argument `enemy` is an instance of `Superhero`.
